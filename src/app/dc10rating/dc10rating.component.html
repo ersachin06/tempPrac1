@@ -1,0 +1,20 @@
+<p>
+  dc10rating works! {{prodRating}}
+</p>
+
+<div>
+  <div *ngIf="prodRating>3" class="bg-success">
+    Excellent
+  </div>
+
+  <div *ngIf="prodRating>2 && prodRating<=3" class="bg-primary">
+    good
+  </div>
+
+  <div *ngIf="prodRating<=2" class="bg-warning">
+    Poor
+  </div>
+
+</div>
+
+{{category|json}}

@@ -1,0 +1,42 @@
+<p>
+  dc9prod works!
+</p>
+
+<table class="table ">
+    <tr class="bg-danger">
+      <th>prodid</th>
+      <th>catid</th>
+      <th>name</th>
+      <th>desc</th>
+      <th>img</th>
+      <th>price</th>
+      <th>qty</th>
+      <th>rating</th>
+      <th>rating2</th>
+      <th>sending cat</th>
+    </tr>
+<ng-container *ngFor="let p of products">
+    <tr >
+        <td>{{p.pid}}</td>
+        <td>{{p.catid}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.desc}}</td>
+        <td>{{p.img}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.qty}}</td>
+        <td>{{p.rating}}</td>
+        <td>
+          {{p.rating}}
+          <app-dc10rating [prodRating]="p.rating"></app-dc10rating>
+        </td>
+        <td>
+            {{cat}}
+            <app-dc10rating [category]="cat"></app-dc10rating>
+          </td>
+          <td>
+            {{p.rating}}
+            <app-dc11prod-passing-obj-to-child   [prodRating]="p.rating" (prodRaingCount)="ratingStatus($event)" ></app-dc11prod-passing-obj-to-child>
+          </td>
+    </tr>
+  </ng-container>
+</table>

@@ -1,0 +1,43 @@
+<h2 class="text-center">{{username| custom}}</h2>
+
+
+<h2 class="text-center">{{username| custom }}</h2>
+
+<br><br><br><br>
+Enter name <input type="text" [(ngModel)]="emp[0].name"/>
+{{emp|json}}
+
+
+<br><br><br><br>
+Enter name <input type="text" [(ngModel)]="emp[0].name"/>
+{{emp|customjson}}
+
+
+
+<input type="text" class="form-control" name="searchString" placeholder="Type to search..." 
+[(ngModel)]="searchString">
+  
+  <table  class="table table-bordered">
+    <tr>
+        <th>Empno</th>
+        <th>Ename slice 0 1</th>
+        <th>Job</th>
+        <th>MGR</th>
+        <th>HIREDATE</th>
+        <th>SAL</th>
+        <th>COMM</th>
+        <th>DEPTNOo</th>
+    </tr>
+    <tr *ngFor="let e of emp |  filter : 'JOB' : searchString;"> 
+        <td>{{e.EMPNO}}</td>
+        <td>{{e.ENAME}}</td>
+        <td>{{e.JOB}}</td>
+        <td>{{e.MGR}}</td>
+        <td>{{e.HIREDATE }}</td>
+        <td>{{e.SAL}}</td>
+        <td>{{e.COMM}}</td>
+        <td>{{e.DEPTNO}}</td>
+    </tr>
+    
+    </table>
+

@@ -1,0 +1,19 @@
+<p>
+  dc11prod-passing-obj-to-child works!
+</p>
+{{prodRating}}
+
+<div (click)="sendProdRating(prodRating)">
+  <div *ngIf="prodRating>3" class="bg-success">
+    Excellent
+  </div>
+
+  <div *ngIf="prodRating>2 && prodRating<=3" class="bg-primary">
+    good
+  </div>
+
+  <div *ngIf="prodRating<=2" class="bg-warning">
+    Poor
+  </div>
+
+</div>
